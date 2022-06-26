@@ -1,4 +1,16 @@
+import React from "react";
+
 function Sort() {
+  const [openSortMenu, setOpenSortMenu] = React.useState(false);
+  const[selectSortMenu, setSelectSortMenu] = React.useState(0);
+  const ListSort = ['популярности', 'цене', 'алфавиту'];
+  const sortName = ListSort[selectSortMenu];
+
+  const OnClickSelectAndCloseMenu = (index) => {
+    setSelectSortMenu(index);
+    setOpenSortMenu(false);
+  };
+
   return (
     <div className="sort">
       <div className="sort__label">
@@ -15,15 +27,24 @@ function Sort() {
           />
         </svg>
         <b>Сортировка по:</b>
-        <span>популярности</span>
+        <span onClick={() => setOpenSortMenu(!openSortMenu)}>{sortName};
+</span>
       </div>
-      <div className="sort__popup">
+      {
+        openSortMenu && (<div className="sort__popup">
         <ul>
-          <li className="active">популярности</li>
-          <li>цене</li>
-          <li>алфавиту</li>
+          {
+            ListSort.map((name, index) => (
+              <li key={index}
+                  onClick={() => OnClickSelectAndCloseMenu(index)}
+                  className={selectSortMenu === index ? 'active': ''}>
+              {name}</li>
+            ))
+          }
+        
         </ul>
-      </div>
+      </div>)
+      }
     </div>
   );
 }

@@ -2,15 +2,14 @@ import React from "react";
 
 function PizzaBlock(props) {
   const typeNamesPizza = ["тонкое", "традиционное"];
-
   const [activeType, setActiveType] = React.useState(0);
   const [activeSize, setActiveSize] = React.useState(0);
-
   const [pizzaCounter, setPizzaCounter] = React.useState(0);
 
   const addCounterPizza = () => {
     setPizzaCounter(pizzaCounter + 1);
   };
+
   return (
     <div className="pizza-block">
       <img className="pizza-block__image" src={props.image} alt="Pizza" />
@@ -19,6 +18,7 @@ function PizzaBlock(props) {
         <ul>
           {props.types.map((typeIdex) => (
             <li
+              key={typeIdex}
               onClick={() => setActiveType(typeIdex)}
               className={activeType === typeIdex ? "active" : ""}
             >
@@ -29,6 +29,7 @@ function PizzaBlock(props) {
         <ul>
           {props.sizes.map((size, index) => (
             <li
+              key={index}
               onClick={() => setActiveSize(index)}
               className={activeSize === index ? "active" : ""}
             >

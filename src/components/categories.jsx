@@ -14,8 +14,10 @@ const category = ['Все', 'Мясные', 'Вегетарианская', 'Г�
       <ul>
         {
           category.map((value, index) => (
-            <li onClick={() => onClickCategory(index)}
-                className={activeIndexCategory === index  ? 'active' : ''}>{value}</li>
+            <li 
+              key={index}
+              onClick={() => onClickCategory(index)}
+              className={activeIndexCategory === index  ? 'active' : ''}>{value}</li>
           ))
         }
       </ul>

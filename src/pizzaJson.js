@@ -2,7 +2,7 @@ const pizzas = [
     {
         'id': 0,
         'image': '/img/peperony.jpg',
-        'title': 'Peperony fresh',
+        'title': 'Пеперони',
         'types': [0, 1],
         'sizes': [26, 30, 40],
         'price': 200,
@@ -13,7 +13,7 @@ const pizzas = [
     {
         'id': 1,
         'image': '/img/pizza-dodomix 4 sesone.png',
-        'title': '4 sezona',
+        'title': '4 сезона',
         'types': [0],
         'sizes': [26, 30, 40],
         'price': 250,
@@ -23,7 +23,7 @@ const pizzas = [
     {
         'id': 2,
         'image': '/img/po-italy.png',
-        'title': 'Po italy',
+        'title': 'По-итальянски',
         'types': [0, 1],
         'sizes': [30, 40],
         'price': 400,
@@ -34,7 +34,7 @@ const pizzas = [
     {
         'id': 3,
         'image': '/img/sezona4.jpg',
-        'title': 'Koponiny',
+        'title': 'Острый цыпленок',
         'types': [1],
         'sizes': [26, 30],
         'price': 400,
